@@ -8,6 +8,6 @@ jobs:
     deploy-dashboard :
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - run: actions/checkout@v4
     - run: echo 'Hacemos pull del codigo'
     
