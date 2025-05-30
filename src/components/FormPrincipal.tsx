@@ -1,7 +1,11 @@
 import { useState } from "react"
-import {v4 as uuidv4} from 'uuid'
+import { v4 as uuidv4 } from 'uuid'
+import { useChartContext } from "../context/ChartContext"
+
 
 const FormPrincipal = () => {
+    const { agregarGrafico } = useChartContext()
+
     const [titulo, setTitulo] = useState('')
     const [valorGrafico, setValorGrafico] = useState(0)
     const [fecha, setFecha] = useState(new Date())
@@ -9,6 +13,7 @@ const FormPrincipal = () => {
     const tiposDeGraficos = ['line', 'area', 'bar', 'heatmap']
 
     const handleSubmit = (e) => {
+        e.preventDefault();
 
         //flijo de la fecha ennel formulario
         const fechaFormateada = fecha.toISOString().split('T')[0];
@@ -25,7 +30,8 @@ const FormPrincipal = () => {
             }]
         }
         console.log('Datos del grafico', nuevoGrafico);
-        e.preventDefault();
+        agregarGrafico(nuevoGrafico)
+        
         resertForm()
     }
 
@@ -50,7 +56,7 @@ const FormPrincipal = () => {
                         value={titulo}
                         onChange={(e) => setTitulo(e.target.value)}
                         required
-                       
+
                     />
                     {/* NUMERO */}
                     <input

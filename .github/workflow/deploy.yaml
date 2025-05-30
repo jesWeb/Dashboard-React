@@ -2,11 +2,12 @@ name: "deploy dashboard-2025"
 
 on:
   push:
-    branches: ["main"]
+    branches: ["jesus"]
 
 jobs:
     deploy-dashboard :
     runs-on: ubuntu-latest
     steps:
-      run: echo 'Hacemos pull del codigo'
+    - uses: actions/checkout@v2
+    - run: echo 'Hacemos pull del codigo'
     

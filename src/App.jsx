@@ -1,8 +1,11 @@
 import ApexChartEnlace from "./components/ApexChartEnlace";
 import EditorGrafocs from "./components/EditorGrafocs";
 import FormPrincipal from "./components/FormPrincipal";
+import { useChartContext } from "./context/ChartContext";
 
 function App() {
+  const { state } = useChartContext();
+
   return (
     <>
       <div className="w-4/5 mx-auto">
@@ -15,7 +18,6 @@ function App() {
             Resetar Aplicacion
           </button>
         </div>
-
         {/* formulario para crear y editar  */}
         <div className="rounded border shadow-2xl p-5 bg-white">
           <FormPrincipal />
@@ -23,24 +25,17 @@ function App() {
         </div>
         {/* graficos */}
         <div className="grid grid-cols-3 gap-4 mt-8 justify-center">
-          <div className="rounded shadow-xl p-5 bg-slate-200 text-center">
-            <h2 className="text-center font-bold pb-2">Grafico 1</h2>
-            <div className="flex justify-center shadow-lg">
-              <ApexChartEnlace />
+          {state.datos.map((grafico) => (
+            <div
+              key={grafico.id}
+              className="rounded shadow-xl p-5 bg-slate-200 text-center"
+            >
+              <h2 className="text-center font-bold pb-2">{grafico.titulo}</h2>
+              <div className="flex justify-center shadow-lg">
+                <ApexChartEnlace datagrafico={grafico} />
+              </div>
             </div>
-          </div>
-          <div className="rounded shadow-xl p-5 bg-slate-200 text-center">
-            <h2 className="text-center font-bold pb-2">Grafico 2</h2>
-            <div className="flex justify-center shadow-lg">
-              <ApexChartEnlace />
-            </div>
-          </div>
-          <div className="rounded shadow-xl p-5 bg-slate-200 text-center">
-            <h2 className="text-center font-bold pb-2">Grafico 3</h2>
-            <div className="flex justify-center shadow-lg">
-              <ApexChartEnlace />
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </>
