@@ -11,7 +11,7 @@ function ApexChartEnlace({ datagrafico }) {
         series: series,
         xaxis: {
             type: 'datetime',
-            labels: { format: 'dd MM' }
+            labels: { format: 'dd MMM' }
             //categoria
         }
     }

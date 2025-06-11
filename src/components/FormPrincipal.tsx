@@ -4,8 +4,7 @@ import { useChartContext } from "../context/ChartContext"
 
 
 const FormPrincipal = () => {
-    const { agregarGrafico } = useChartContext()
-
+     const { agregarGrafico } = useChartContext()
     const [titulo, setTitulo] = useState('')
     const [valorGrafico, setValorGrafico] = useState(0)
     const [fecha, setFecha] = useState(new Date())

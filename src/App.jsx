@@ -4,6 +4,7 @@ import FormPrincipal from "./components/FormPrincipal";
 import { useChartContext } from "./context/ChartContext";
 
 function App() {
+
   const { state } = useChartContext();
 
   return (

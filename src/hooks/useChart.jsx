@@ -3,20 +3,21 @@ import { dashboardReducer, estadoInicial } from "../reducers/ChartReducer";
 
 export default function useChart() {
   const [state, dispatch] = useReducer(dashboardReducer, estadoInicial);
-  const ids = new Set();
- 
-  const agregarGrafica = (grafico) => {
-    console.log("datos del grafico", grafico);
-    if (!ids.has(grafico.id)) {
-      ids.add(grafico.id);
-      dispatch({ type: "crerar_grafico", payload: grafico });
+  const id = new Set();
+
+  const agregarGrafico = (grafico) => {
+    console.log("datos del grafico originales", grafico);
+
+    if (!id.has(grafico.id)) {
+      id.add(grafico.id);
+      dispatch({ type: 'new_graf', payload: grafico});
     } else {
       console.warn(
         "Grafico con id duplicado",
-        `${grafico.id}, este grafico no se publicaea y se omitira`
+        `${grafico.id}, este grafico no se publica y se omitira`
       );
     }
   };
 
-  return { state, agregarGrafica };
+  return { state,agregarGrafico };
 }
