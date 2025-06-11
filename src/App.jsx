@@ -9,7 +9,7 @@ function App() {
 
   return (
     <>
-      <div className="w-4/5 mx-auto">
+      <div className="w-4/5 mx-auto my-auto ">
         <div className="flex justify-between items-center my-5">
           <h1 className="text-center font-black text-4xl">Dashboard</h1>
           <button
@@ -20,7 +20,7 @@ function App() {
           </button>
         </div>
         {/* formulario para crear y editar  */}
-        <div className="rounded border shadow-2xl p-5 bg-white">
+        <div className="rounded border border-indigo-50 shadow-2xl p-5 bg-white">
           <FormPrincipal />
           <EditorGrafocs />
         </div>

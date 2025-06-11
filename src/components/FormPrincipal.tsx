@@ -36,10 +36,10 @@ const FormPrincipal = () => {
 
 
     const resertForm = () => {
-        setTitulo(titulo)
-        setValorGrafico(valorGrafico)
-        setFecha(fecha)
-        setTipoGrafico(tipoGrafico)
+        setTitulo('')
+        setValorGrafico(0)
+        setFecha(new Date())
+        setTipoGrafico('')
     }
 
 
