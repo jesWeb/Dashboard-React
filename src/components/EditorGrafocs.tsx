@@ -1,5 +1,7 @@
 import { useState } from "react"
 import { useChartContext } from "../context/ChartContext"
+import Modal_Eliminar from "./Modal_Eliminar"
+import useModal from "../hooks/useModal"
 
 const EditorGrafocs = () => {
 
@@ -8,6 +10,9 @@ const EditorGrafocs = () => {
   const [valorGrafico, setValorGrafico] = useState(0)
   const [fecha, setFecha] = useState(new Date())
   const listaGraficos = state.datos
+  const { isOpen: isOpenModalEliminar,
+    openModal: openModalModalEliminar, closeModal: closeModalModalEliminar
+  } = useModal()
 
 
   const handleSubmit = (e) => {
@@ -105,8 +110,16 @@ const EditorGrafocs = () => {
           <button
             type="button"
             className='bg-red-500 hover:bg-red-700 rounded  m-5 p-2 text-white hover:cursor-pointer shadow-lg'
+            onClick={() => openModalModalEliminar()}
           >Eliminar Grafico
           </button>
+
+          {isOpenModalEliminar &&
+            <Modal_Eliminar
+              close={closeModalModalEliminar
+              }
+            />
+          }
 
           <button
 
