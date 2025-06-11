@@ -6,10 +6,10 @@ const ChartContext = createContext();
 
 // 2 - Creo el proveedor del cpntext
 export const ChartProvider = ({ children }) => {
-  const { state, agregarGrafico } = useChart();
+  const { state, agregarGrafico, actualizarGrafico } = useChart();
 
   return (
-    <ChartContext.Provider value={{ state, agregarGrafico }}>
+    <ChartContext.Provider value={{ state, agregarGrafico, actualizarGrafico }}>
       {children}
     </ChartContext.Provider>
   );

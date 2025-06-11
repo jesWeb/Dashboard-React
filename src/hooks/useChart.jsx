@@ -10,7 +10,7 @@ export default function useChart() {
 
     if (!id.has(grafico.id)) {
       id.add(grafico.id);
-      dispatch({ type: 'new_graf', payload: grafico});
+      dispatch({ type: "new_graf", payload: grafico });
     } else {
       console.warn(
         "Grafico con id duplicado",
@@ -19,5 +19,11 @@ export default function useChart() {
     }
   };
 
-  return { state,agregarGrafico };
+  //actualizar el grafico de edicion
+  const actualizarGrafico = (graficoElejido) => {
+    console.log("que llegas de la actualizacion", graficoElejido);
+    dispatch({type:'update_graf',payload:graficoElejido})
+  };
+
+  return { state, agregarGrafico, actualizarGrafico };
 }
