@@ -22,8 +22,13 @@ export default function useChart() {
   //actualizar el grafico de edicion
   const actualizarGrafico = (graficoElejido) => {
     console.log("que llegas de la actualizacion", graficoElejido);
-    dispatch({type:'update_graf',payload:graficoElejido})
+    dispatch({ type: "update_graf", payload: graficoElejido });
   };
 
-  return { state, agregarGrafico, actualizarGrafico };
+  //eliminar grafico
+  const eliminarGrafica = (id) => {
+    dispatch({ type: 'eliminarGrafico', payload: { id } });
+  };
+
+  return { state, agregarGrafico, actualizarGrafico ,eliminarGrafica};
 }

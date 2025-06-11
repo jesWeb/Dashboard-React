@@ -1,6 +1,20 @@
-import React from 'react'
+import { useChartContext } from "../context/ChartContext";
 
-const Modal_Eliminar = ({ close }) => {
+const Modal_Eliminar = ({ onClose, selectorTitulo, eliminarGrafica }) => {
+
+    const { state } = useChartContext()
+    const graficoSeleccionado = state.datos.find(grafico => grafico.id === selectorTitulo)
+
+    const btnEliminar = () => {
+        if (graficoSeleccionado) {
+            console.log(graficoSeleccionado.id);
+           eliminarGrafica(graficoSeleccionado.id)
+
+            onClose()
+        }
+    }
+
+
     return (
         <div className="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
             <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
@@ -27,6 +41,7 @@ const Modal_Eliminar = ({ close }) => {
 
                         <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
                             <button
+                            onClick={btnEliminar}
                                 type="button"
                                 className="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"
                             >
@@ -34,7 +49,7 @@ const Modal_Eliminar = ({ close }) => {
                             </button>
 
                             <button
-                                onClick={close}
+                                onClick={onClose}
                                 type="button"
                                 className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
                             >

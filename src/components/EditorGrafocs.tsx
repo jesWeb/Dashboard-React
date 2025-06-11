@@ -5,7 +5,7 @@ import useModal from "../hooks/useModal"
 
 const EditorGrafocs = () => {
 
-  const { state, actualizarGrafico } = useChartContext()
+  const { state, actualizarGrafico, eliminarGrafica } = useChartContext()
   const [selectorTitulo, setSelectorTitulo] = useState('')
   const [valorGrafico, setValorGrafico] = useState(0)
   const [fecha, setFecha] = useState(new Date())
@@ -111,13 +111,17 @@ const EditorGrafocs = () => {
             type="button"
             className='bg-red-500 hover:bg-red-700 rounded  m-5 p-2 text-white hover:cursor-pointer shadow-lg'
             onClick={() => openModalModalEliminar()}
-          >Eliminar Grafico
+          >
+            Eliminar Grafico
           </button>
 
           {isOpenModalEliminar &&
             <Modal_Eliminar
-              close={closeModalModalEliminar
-              }
+              onClose={closeModalModalEliminar}
+              selectorTitulo={selectorTitulo}
+              eliminarGrafica={eliminarGrafica}
+              
+
             />
           }
 
