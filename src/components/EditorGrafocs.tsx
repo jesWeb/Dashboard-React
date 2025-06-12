@@ -24,7 +24,7 @@ const EditorGrafocs = () => {
       y: valorGrafico
     }
 
-    //copia de el grafico
+   
     const graficoSeleccionado = state.datos.find((grafico) => grafico.id === selectorTitulo)
 
     if (graficoSeleccionado) {
@@ -35,16 +35,13 @@ const EditorGrafocs = () => {
       const indiceFecha = nuevosDatos.findIndex(dato => dato.x === nuevoDato.x)
 
       if (indiceFecha !== -1) {
-        // si no es -1 , entonces se encotro un dato con la misma fecha 
+      
         nuevosDatos[indiceFecha] = nuevoDato
       } else {
-        //si es -1 , enotnces n0 se encontro
+       
         nuevosDatos.push(nuevoDato)
       }
 
-      //si me devuelven un numero negativo, entonces fechA debe ir antes de fechaB
-      //si me da 0 fechaA y fechaB son iguales
-      //si me devuelve un numero positivo, entonces fechaA  debe ir despues de fecha b
       nuevosDatos.sort((fechaA, fechaB) => fechaA.x.localeCompare(fechaB.x))
 
       const nuevoGrafico = {
@@ -59,7 +56,6 @@ const EditorGrafocs = () => {
 
       actualizarGrafico(nuevoGrafico)
     }
-
 
     resetForm()
   }
@@ -120,18 +116,13 @@ const EditorGrafocs = () => {
               onClose={closeModalModalEliminar}
               selectorTitulo={selectorTitulo}
               eliminarGrafica={eliminarGrafica}
-              
-
             />
           }
 
           <button
-
             className='bg-blue-600 hover:bg-blue-500 rounded  m-5 p-2 text-white hover:cursor-pointer shadow-lg'>
             Actualizar el grafico
-
           </button>
-
         </div>
       </form>
     </>

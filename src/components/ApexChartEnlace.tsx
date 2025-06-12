@@ -6,13 +6,12 @@ function ApexChartEnlace({ datagrafico }) {
 
     const options = {
         chart: {
-            type: 'bar' //tipo grafico 
+            type: 'bar'  
         },
         series: series,
         xaxis: {
             type: 'datetime',
             labels: { format: 'dd MMM' }
-            //categoria
         }
     }
 
@@ -20,10 +19,10 @@ function ApexChartEnlace({ datagrafico }) {
     return (
         <div>
             <ReactApexChart
-                options={options} // corregido
+                options={options} 
                 series={options.series}
                 type={tipo}
-                height={350} // corregido
+                height={350} 
             />
         </div>
     )

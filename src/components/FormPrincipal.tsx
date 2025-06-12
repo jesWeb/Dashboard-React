@@ -57,7 +57,7 @@ const FormPrincipal = () => {
                         required
 
                     />
-                    {/* NUMERO */}
+                   
                     <input
                         type="number"
                         placeholder='Dato'
@@ -65,7 +65,7 @@ const FormPrincipal = () => {
                         value={valorGrafico}
                         onChange={(e) => setValorGrafico(Number(e.target.value))}
                     />
-                    {/* dia */}
+                
                     <input
                         type="date"
                         className='w-44 m-5 p-1 rounded shadow-lg border border-slate-300 focus:shadow-slate-400 focu:outline-none'

@@ -1,12 +1,10 @@
-//estado inicial  - Es un arreglos de objetos vacios
 export const estadoInicial = {
-  //aqui se almacenan
+
   datos: [],
 };
 
-// Reducer: nos sirve para amanejar las acciones de creacion, actualizacion y elimiacion
 export const dashboardReducer = (state, action) => {
-  //crear
+
   if (action.type === 'new_graf') {
     console.log("llegan los datos", action.payload);
 
@@ -15,7 +13,7 @@ export const dashboardReducer = (state, action) => {
       datos: [...state.datos, action.payload],
     };
   }
-  //editar
+
   if (action.type === 'update_graf') {
     return {
       ...state,
@@ -26,8 +24,6 @@ export const dashboardReducer = (state, action) => {
       ),
     };
   }
-
-  //eliminar
 
   if (action.type === 'eliminarGrafico') {
     return {

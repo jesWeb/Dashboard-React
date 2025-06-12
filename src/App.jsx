@@ -8,7 +8,7 @@ import useModal from "./hooks/useModal";
 
 function App() {
   const { state } = useChartContext();
-  //reclicarl hook de modal
+  
   const {
     isOpen: isResetModalOpen,
     openModal: openResetModal,
@@ -31,12 +31,12 @@ function App() {
            {isResetModalOpen && <ResetModal onClose={closeResetModal} />}
 
         </div>
-        {/* formulario para crear y editar  */}
+      
         <div className="rounded border border-indigo-50 shadow-2xl p-5 bg-white">
           <FormPrincipal />
           <EditorGrafocs />
         </div>
-        {/* graficos */}
+
         <div className="grid grid-cols-3 gap-4 mt-8 justify-center">
           {state.datos.map((grafico) => (
             <div

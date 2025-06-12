@@ -8,7 +8,7 @@ export default function useChart() {
   const [graficosCargados, setGraficosCargados] = useState(false);
 
   const id = new Set();
-  //buscar si existe y despues de guardam
+
   useEffect(() => {
     if (!graficosCargados) {
       const data = localStorage.getItem("graficos");
@@ -47,13 +47,12 @@ export default function useChart() {
     }
   };
 
-  //actualizar el grafico de edicion
+
   const actualizarGrafico = (graficoElejido) => {
     console.log("que llegas de la actualizacion", graficoElejido);
     dispatch({ type: "update_graf", payload: graficoElejido });
   };
 
-  //eliminar grafico
   const eliminarGrafica = (id) => {
     dispatch({ type: "eliminarGrafico", payload: { id } });
   };

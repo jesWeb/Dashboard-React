@@ -1,6 +1,6 @@
 const ResetModal = ({ onClose }) => {
   const handleReset =() =>{
-    //remover localStorage
+    
     localStorage.removeItem('graficos')
     window.location.reload()
     onClose()
@@ -14,9 +14,11 @@ const ResetModal = ({ onClose }) => {
       aria-modal="true"
     >
       <div
-        className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+        className="fixed inset-0 bg-gray-500 bg-opacity-100 transition-opacity"
         aria-hidden="true"
-      ></div>
+      >
+
+      </div>
 
       <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
         <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
@@ -45,13 +47,12 @@ const ResetModal = ({ onClose }) => {
                     className="text-base font-semibold leading-6 text-gray-900"
                     id="modal-title"
                   >
-                    RESETEAR APLICACI N
+                    RESETEAR APLICACION
                   </h3>
                   <div className="mt-2">
                     <p className="text-sm text-gray-500">
-                      {" "}
-                      Seguro que quieres RESETEAR TODA LA APLICACI N? Se borrar
-                      n todos los datos guardados.
+                      Seguro que quieres RESETEAR TODA LA APLICACION?
+                       Se borrar todos los datos guardados.
                     </p>
                   </div>
                 </div>

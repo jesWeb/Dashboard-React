@@ -1,10 +1,9 @@
 import { createContext, useContext } from "react";
 import useChart from "../hooks/useChart";
 
-// 1 creo el Context
+
 const ChartContext = createContext();
 
-// 2 - Creo el proveedor del cpntext
 export const ChartProvider = ({ children }) => {
   const { state, agregarGrafico, actualizarGrafico,eliminarGrafica } = useChart();
 
@@ -15,7 +14,6 @@ export const ChartProvider = ({ children }) => {
   );
 };
 
-// 3 - Hoock para acceder al context
 export const useChartContext = () => {
   const context = useContext(ChartContext);
   if (!context) {
