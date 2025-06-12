@@ -1,12 +1,43 @@
-# React + Vite
+# Dashboard React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es un dashboard interactivo construido con **React** y **Vite**. Permite crear, editar y eliminar gráficos dinámicos utilizando [ApexCharts](https://apexcharts.com/) y almacenar los datos localmente en el navegador.
 
-Currently, two official plugins are available:
+## Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Crear gráficos personalizados (línea, área, barra, heatmap)
+- Editar datos de los gráficos existentes
+- Eliminar gráficos individualmente
+- Resetear toda la aplicación (borrar todos los datos)
+- Persistencia de datos en `localStorage`
+- Interfaz moderna con **TailwindCSS**
 
-## Expanding the ESLint configuration
+## Instalación
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Clona el repositorio:
+
+   ```sh
+   git clone <url-del-repositorio>
+   cd dashboard-react'
+
+  2. Instala las dependencias:
+      ```sh
+     npm install
+
+  3. Inicia el servidor de desarrollo con:
+     ```sh
+     npm run dev
+
+  Abre http://localhost:5173 en tu navegador para ver la aplicación
+
+  4. Inicia el servidor de desarrollo con:
+       Estructura del proyecto
+       ```text
+         src/
+              ├── components/      # Componentes reutilizables (formularios, modales, gráficos)
+              ├── context/         # Contexto global para gestión de gráficos
+              ├── hooks/           # Hooks personalizados
+              ├── reducers/        # Reducer para el manejo del estado de los gráficos
+              ├── App.jsx          # Componente principal
+              ├── main.jsx         # Punto de entrada de la app
+              └── index.css        # Estilos globales (TailwindCSS)
+
