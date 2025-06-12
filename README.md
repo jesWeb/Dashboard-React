@@ -16,7 +16,7 @@ Este proyecto es un dashboard interactivo construido con **React** y **Vite**. P
 1. Clona el repositorio:
 
    ```sh
-   git clone <url-del-repositorio>
+   git clone https://github.com/jesWeb/Dashboard-React.git
    cd dashboard-react'
 
   2. Instala las dependencias:
